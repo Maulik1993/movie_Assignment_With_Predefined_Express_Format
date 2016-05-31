@@ -10,7 +10,8 @@ var updatemovie=require('./routes/updatemv');
 var deletemovie=require('./routes/deletemv');
 var addmovie=require('./routes/addmovie');
 var users = require('./routes/users');
-
+var fetchFile = require('./routes/fetchJson');
+var maxRecord1 = require('./routes/maxRecords');
 var app = express();
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
@@ -30,6 +31,8 @@ app.use('/', routes);
 app.use('/delete', deletemovie);
 app.use('/add',addmovie);
 app.use('/update',updatemovie);
+app.use('/page',fetchFile);
+app.use('/page1',maxRecord1);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
